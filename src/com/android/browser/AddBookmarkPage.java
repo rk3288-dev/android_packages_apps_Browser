@@ -913,6 +913,8 @@ public class AddBookmarkPage extends Activity
             if (values.size() > 0) {
                 new UpdateBookmarkTask(getApplicationContext(), id).execute(values);
             }
+            Toast.makeText(AddBookmarkPage.this, R.string.bookmark_exists,
+                    Toast.LENGTH_LONG).show();
             setResult(RESULT_OK);
         } else {
             Bitmap thumbnail;

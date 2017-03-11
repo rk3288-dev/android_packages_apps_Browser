@@ -109,6 +109,9 @@ public class NavigationBarTablet extends NavigationBarBase implements StateListe
         mSearchButton.setOnClickListener(this);
         mClearButton.setOnClickListener(this);
         mVoiceButton.setOnClickListener(this);
+        //$_rbox_$_modify_$_by huangjc
+        mUrlInput.setOnClickListener(this);
+        //$_rbox_$_modify_$_end
         mUrlInput.setContainer(mUrlContainer);
         mUrlInput.setStateListener(this);
     }
@@ -181,6 +184,10 @@ public class NavigationBarTablet extends NavigationBarBase implements StateListe
             clearOrClose();
         } else if (mVoiceButton == v) {
             mUiController.startVoiceRecognizer();
+        //$_rbox_$_modify_$_by huangjc
+        } else if (mUrlInput == v) {
+            mBaseUi.editUrl(false, true);
+        //$_rbox_$_modify_$_end
         } else {
             super.onClick(v);
         }

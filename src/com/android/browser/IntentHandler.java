@@ -163,6 +163,7 @@ public class IntentHandler {
                     if (current != appTab) {
                         mController.switchToTab(appTab);
                     }
+                    appTab.getWebView().reload();
                     // Otherwise, we are already viewing the correct tab.
                 } else {
                     // if FLAG_ACTIVITY_BROUGHT_TO_FRONT flag is on, the url

@@ -51,6 +51,8 @@ import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.WeakHashMap;
+import android.os.SystemProperties;
+import android.text.TextUtils;
 
 /**
  * Class for managing settings
@@ -221,6 +223,12 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
             }
 
             sFactoryResetUrl = mContext.getResources().getString(R.string.homepage_base);
+            if (TextUtils.isEmpty(SystemProperties.get("ro.rk.homepage_base"))){
+                  sFactoryResetUrl = mContext.getResources().getString(R.string.homepage_base);
+            }else{
+                  sFactoryResetUrl =SystemProperties.get("ro.rk.homepage_base");
+            }
+            
             if (sFactoryResetUrl.indexOf("{CID}") != -1) {
                 sFactoryResetUrl = sFactoryResetUrl.replace("{CID}",
                     BrowserProvider.getClientId(mContext.getContentResolver()));
@@ -290,7 +298,8 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
         // zooming
         settings.setEnableSmoothTransition(true);
         // disable content url access
-        settings.setAllowContentAccess(false);
+        //settings.setAllowContentAccess(false);
+        settings.setAllowContentAccess(true);/*fix net::ERR_ACCESS_DENIED issue*/
 
         // HTML5 API flags
         settings.setAppCacheEnabled(true);

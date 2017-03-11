@@ -413,4 +413,7 @@
     <string name="accessibility_state_frozen" msgid="8041539250447035570">"저장된 페이지"</string>
     <string name="accessibility_transition_navscreen" msgid="2734915619351519547">"탭 관리"</string>
     <string name="accessibility_button_bookmarks_folder_up" msgid="9179389954714270505">"이전 폴더"</string>
+    
+    <string name="exit">종료</string>
+    <string name="bookmark_exists">책갈피 이미 존재합니다.</string>
 </resources>

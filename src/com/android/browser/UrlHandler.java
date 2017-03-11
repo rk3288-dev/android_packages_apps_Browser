@@ -141,10 +141,14 @@ public class UrlHandler {
       if (mActivity.getPackageManager().resolveActivity(intent, 0) == null) {
           String packagename = intent.getPackage();
           if (packagename != null) {
-              intent = new Intent(Intent.ACTION_VIEW, Uri
-                      .parse("market://search?q=pname:" + packagename));
-              intent.addCategory(Intent.CATEGORY_BROWSABLE);
-              mActivity.startActivity(intent);
+              try {
+                  intent = new Intent(Intent.ACTION_VIEW, Uri
+                          .parse("market://search?q=pname:" + packagename));
+                  intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                  mActivity.startActivity(intent);
+              } catch (ActivityNotFoundException e) {
+                  Log.w("Browser", "No activity to handle the intent");
+              }
               // before leaving BrowserActivity, close the empty child tab.
               // If a new tab is created through JavaScript open to load this
               // url, we would like to close it as we will load this url in a

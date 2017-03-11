@@ -152,7 +152,7 @@ public class PhoneUi extends BaseUi {
         if (mUseQuickControls) {
             mPieControl.forceToTop(mContentView);
             view.setTitleBar(null);
-            mTitleBar.setShowProgressOnly(true);
+            //mTitleBar.setShowProgressOnly(true);
         } else {
             view.setTitleBar(mTitleBar);
         }
@@ -242,7 +242,7 @@ public class PhoneUi extends BaseUi {
         mTitleBar.animate().translationY(0);
         if (inLoad) {
             if (mUseQuickControls) {
-                mTitleBar.setShowProgressOnly(true);
+                //mTitleBar.setShowProgressOnly(true);
             }
             showTitleBar();
         }

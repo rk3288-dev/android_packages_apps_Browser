@@ -646,6 +646,7 @@ public class BrowserProvider2 extends SQLiteContentProvider {
             values.put(Bookmarks._ID, FIXED_ID_ROOT);
             values.put(ChromeSyncColumns.SERVER_UNIQUE, ChromeSyncColumns.FOLDER_NAME_BOOKMARKS);
             values.put(Bookmarks.TITLE, "Bookmarks");
+            values.put(Bookmarks.URL, "");
             values.putNull(Bookmarks.PARENT);
             values.put(Bookmarks.POSITION, 0);
             values.put(Bookmarks.IS_FOLDER, true);

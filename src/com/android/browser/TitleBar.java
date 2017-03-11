@@ -138,7 +138,7 @@ public class TitleBar extends RelativeLayout {
         mUseQuickControls = use;
         setFixedTitleBar();
         if (use) {
-            this.setVisibility(View.GONE);
+            //this.setVisibility(View.GONE);
         } else {
             this.setVisibility(View.VISIBLE);
         }
@@ -186,7 +186,7 @@ public class TitleBar extends RelativeLayout {
 
     void hide() {
         if (mUseQuickControls) {
-            this.setVisibility(View.GONE);
+            //this.setVisibility(View.GONE);
         } else {
             if (mIsFixedTitleBar) return;
             if (!mSkipTitleBarAnimations) {
@@ -272,7 +272,7 @@ public class TitleBar extends RelativeLayout {
             mProgress.setProgress(newProgress * PageProgressView.MAX_PROGRESS
                     / PROGRESS_MAX);
             if (mUseQuickControls && !isEditingUrl()) {
-                setShowProgressOnly(true);
+                //setShowProgressOnly(true);
             }
             if (!mShowing) {
                 show();
